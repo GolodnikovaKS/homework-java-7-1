@@ -37,9 +37,10 @@ public class StatsService {
 
     public int countMonthSumBelowAverage(long[] sales){
         int countMontBelow = 0;
+        long averageSales = averageMonthlySalesAmount(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i]<averageMonthlySalesAmount(sales)){
-                countMontBelow ++;
+            if (sales[i] < averageSales) {
+                countMontBelow++;
             }
         }
         return countMontBelow;
